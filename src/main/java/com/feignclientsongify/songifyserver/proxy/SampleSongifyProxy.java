@@ -24,4 +24,8 @@ public interface SampleSongifyProxy {
 
     @PutMapping("/songs/{id}")
     UpdateSongResponseDto updateSong(@PathVariable Integer id, @RequestBody UpdateSongRequestDto request);
+
+    @PatchMapping("/songs/{id}")
+    PartiallyUpdateResponseDto partiallyUpdatedSong(@PathVariable Integer id, @RequestBody PartiallyUpdateSongRequestDto request);
+
 }
