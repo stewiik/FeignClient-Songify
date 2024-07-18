@@ -19,4 +19,7 @@ public interface SampleSongifyProxy {
     @GetMapping("/songs/{id}")
     GetSongResponseDto getSongById(@PathVariable Integer id, @RequestHeader(required = false) String requestId);
 
+    @DeleteMapping("/songs/{id}")
+    DeleteSongResponseDto deleteSong(@PathVariable String id);
+
 }
