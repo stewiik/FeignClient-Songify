@@ -22,4 +22,6 @@ public interface SampleSongifyProxy {
     @DeleteMapping("/songs/{id}")
     DeleteSongResponseDto deleteSong(@PathVariable String id);
 
+    @PutMapping("/songs/{id}")
+    UpdateSongResponseDto updateSong(@PathVariable Integer id, @RequestBody UpdateSongRequestDto request);
 }

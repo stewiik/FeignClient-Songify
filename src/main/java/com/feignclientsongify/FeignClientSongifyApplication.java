@@ -2,6 +2,7 @@ package com.feignclientsongify;
 
 import com.feignclientsongify.songifyserver.dto.request.CreateSongRequestDto;
 import com.feignclientsongify.songifyserver.dto.response.GetSongResponseDto;
+import com.feignclientsongify.songifyserver.dto.request.UpdateSongRequestDto;
 import com.feignclientsongify.songifyserver.proxy.SampleSongifyProxy;
 import feign.FeignException;
 import lombok.extern.log4j.Log4j2;
@@ -34,6 +35,9 @@ public class FeignClientSongifyApplication {
             log.info(songById);
 
             sampleSongifyClient.deleteSong("3");
+            log.info(sampleSongifyClient.fetchAllSongs());
+
+            sampleSongifyClient.updateSong(1, new UpdateSongRequestDto("lala", "Madonna"));
             log.info(sampleSongifyClient.fetchAllSongs());
 
         } catch (FeignException e) {
