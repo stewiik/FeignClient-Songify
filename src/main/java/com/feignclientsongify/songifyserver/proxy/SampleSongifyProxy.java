@@ -13,4 +13,10 @@ public interface SampleSongifyProxy {
     @PostMapping("/songs")
     CreateSongResponseDto addSong(@RequestBody CreateSongRequestDto request);
 
+    @GetMapping("/songs")
+    GetAllSongsResponseDto fetchAllSongs();
+
+    @GetMapping("/songs/{id}")
+    GetSongResponseDto getSongById(@PathVariable Integer id, @RequestHeader(required = false) String requestId);
+
 }
